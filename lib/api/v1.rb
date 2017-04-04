@@ -11,5 +11,17 @@ class API::V1 < Grape::API
     {version: "v1"}
   end
 
+  helpers do
+    def render_success status_code, message, data = {}
+      {
+        Settings.meta => {
+          Settings.string_success => Settings.success,
+          Settings.status_code => status_code,
+          Settings.message => message
+        }.merge(data)
+      }
+    end
+  end
+
   mount CustomersAPI
 end

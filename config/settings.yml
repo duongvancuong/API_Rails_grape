@@ -1,0 +1,5 @@
+string_success: "success"
+status: "status"
+status_code: "status_code"
+code: "code"
+message: "message"

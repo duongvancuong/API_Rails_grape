@@ -20,6 +20,11 @@ gem 'grape'
 gem 'active_model_serializers'
 gem 'grape-active_model_serializers'
 gem 'sinatra', require: false
+gem 'rack-cors', :require => 'rack/cors'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platform: :mri

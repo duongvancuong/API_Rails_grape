@@ -16,5 +16,14 @@ module RailsIntegrate
     end
 
     config.autoload_paths << Rails.root.join("lib")
+    #Config using CORS for requests in APP FRONT-END
+    config.middleware.use Rack::Cors do
+      allow do
+        origins "*"
+        resource "*", headers: :any, methods: [:get,
+            :post, :put, :delete, :options]
+      end
+    end
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
